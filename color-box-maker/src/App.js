@@ -1,10 +1,10 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
+import BoxList from './BoxList'
 
 const App = () => (
   <>
-    <h1>Color Box Maker</h1>
+    <BoxList />
   </>
-);
+)
 
-export default App;
+export default App
