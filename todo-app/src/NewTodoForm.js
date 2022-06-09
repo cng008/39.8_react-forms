@@ -19,7 +19,7 @@ const NewTodoForm = ({ addTodo }) => {
   const handleSubmit = evt => {
     evt.preventDefault()
     addTodo({ ...formData, id: uuid() })
-    // setFormData(INITIAL_STATE)
+    setFormData({ todo: '' })
   }
 
   return (

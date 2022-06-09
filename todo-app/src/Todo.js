@@ -7,12 +7,16 @@ import React, { useState } from 'react'
  */
 
 const Todo = ({ id, todo, handleRemove }) => {
+  const remove = () => handleRemove(id)
+
   return (
     <>
       <div className="Todo">
         <p>{todo}</p>
+        <button onClick={remove}>x</button>
       </div>
     </>
   )
 }
+
 export default Todo
