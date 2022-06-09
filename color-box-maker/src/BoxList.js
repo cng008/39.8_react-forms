@@ -8,6 +8,9 @@ const BoxList = () => {
   const addBox = newBox => {
     setBoxes(boxes => [...boxes, newBox])
   }
+  const remove = id => {
+    setBoxes(boxes => boxes.filter(box => box.id !== id))
+  }
 
   return (
     <div>
@@ -21,6 +24,7 @@ const BoxList = () => {
             backgroundColor={backgroundColor}
             width={width}
             height={height}
+            handleRemove={remove}
           />
         ))}
       </div>

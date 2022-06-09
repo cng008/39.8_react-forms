@@ -6,15 +6,17 @@ import React from 'react'
  *
  */
 
-const Box = ({ id, backgroundColor, width, height }) => {
+const Box = ({ id, backgroundColor, width, height, handleRemove }) => {
   const styles = {
     height: `${height}em`,
     width: `${width}em`,
     backgroundColor
   }
+  const remove = () => handleRemove(id)
+
   return (
     <>
-      <div className="Box" style={styles}></div>
+      <div className="Box" style={styles} onClick={remove}></div>
     </>
   )
 }
