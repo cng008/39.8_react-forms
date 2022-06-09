@@ -1,5 +1,16 @@
 .Todo {
   display: flex;
   align-items: center;
-  font-size: 1.1em;
+  font-size: 1.2em;
+}
+
+.Todo-Input {
+  font-size: 1.2em;
+  margin-left: 1em;
+  border: none;
+}
+
+button {
+  transform: scale(1.5);
+  margin: 0 2em;
 }

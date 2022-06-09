@@ -9,36 +9,32 @@ import './NewTodoForm.css'
  * */
 
 const NewTodoForm = ({ addTodo }) => {
-  const [formData, setFormData] = useState('')
+  const [task, setTask] = useState('')
   const handleChange = evt => {
-    const { name, value } = evt.target
-    setFormData(formData => ({
-      ...formData,
-      [name]: value
-    }))
+    setTask(evt.target.value)
   }
   const handleSubmit = evt => {
     evt.preventDefault()
-    addTodo({ ...formData, id: uuid() })
-    setFormData({ todo: '' })
+    addTodo({ task, id: uuid() })
+    setTask('')
   }
 
   return (
     <>
-      <form className="NewTodoForm">
-        <label htmlFor="todo" className="NewTodoForm-Label">
+      <form className="NewTodoForm" onSubmit={handleSubmit}>
+        <label htmlFor="task" className="NewTodoForm-Label">
           Add Task
         </label>
         <input
           className="NewTodoForm-Input"
-          id="todo"
+          id="task"
+          name="task"
           type="text"
-          name="todo"
           placeholder="Enter a task"
-          value={formData.todo}
+          value={task}
           onChange={handleChange}
         />
-        <button onClick={handleSubmit}>Add Task</button>
+        <button>Add Task</button>
       </form>
     </>
   )

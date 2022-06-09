@@ -7,21 +7,41 @@ import NewTodoForm from './NewTodoForm'
  */
 
 const TodoList = () => {
-  const [todos, setTodo] = useState([])
-  const addTodo = newTodo => {
-    setTodo(todos => [...todos, newTodo])
+  const [todos, setTodos] = useState([])
+
+  // add a new todo
+
+  const create = newTodo => {
+    setTodos(todos => [...todos, newTodo])
   }
+
+  // update a todo with updatedTask
+  const update = (id, updatedTask) => {
+    setTodos(todos =>
+      todos.map(todo =>
+        todo.id === id ? { ...todo, task: updatedTask } : todo
+      )
+    )
+  }
+
+  // delete a todo by id
   const remove = id => {
-    setTodo(todos => todos.filter(todo => todo.id !== id))
+    setTodos(todos => todos.filter(todo => todo.id !== id))
   }
   return (
     <div className="ToDoList">
       <h1>Todo App</h1>
-      <NewTodoForm addTodo={addTodo} />
+      <NewTodoForm addTodo={create} />
       <ul>
-        {todos.map(({ id, todo }) => (
+        {todos.map(todo => (
           <li>
-            <Todo key={id} id={id} todo={todo} handleRemove={remove} />
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              task={todo.task}
+              handleRemove={remove}
+              update={update}
+            />
           </li>
         ))}
       </ul>
