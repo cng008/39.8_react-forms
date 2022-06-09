@@ -1,0 +1,10 @@
+.BoxList-h1 {
+  text-align: center;
+}
+
+.BoxList-div {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin: 3em; */
+  /* width: 100vw; */
+}

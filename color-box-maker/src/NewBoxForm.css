@@ -1,0 +1,23 @@
+.NewBoxForm {
+  text-align: center;
+}
+
+.NewBoxForm-Label {
+  margin-right: 0.5em;
+}
+
+.NewBoxForm-Input {
+  margin-right: 2em;
+  height: 2em;
+  width: 9em;
+}
+
+.NewBoxForm-Button {
+  display: block;
+  transform: scale(1.5);
+  text-align: center;
+}
+
+button {
+  margin: 2em 0.5em;
+}
