@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import './Box.css'
 
 /** display a div with a background color, width and height based on the props passed to it
  *
@@ -12,11 +13,22 @@ const Box = ({ id, backgroundColor, width, height, handleRemove }) => {
     width: `${width}em`,
     backgroundColor
   }
+  const [isHovering, setIsHovering] = useState(false)
+  const handleMouseOver = () => setIsHovering(true)
+  const handleMouseOut = () => setIsHovering(false)
   const remove = () => handleRemove(id)
 
   return (
     <>
-      <div className="Box" style={styles} onClick={remove}></div>
+      <div
+        className="Box"
+        style={styles}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+        onClick={remove}
+      >
+        {isHovering && <span>x</span>}
+      </div>
     </>
   )
 }
