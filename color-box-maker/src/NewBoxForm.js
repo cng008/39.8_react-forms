@@ -41,12 +41,12 @@ const NewBoxForm = ({ addBox }) => {
       width: getRandom(),
       height: getRandom()
     })
-    addBox({ ...formData, id: uuid() })
+    // addBox({ ...formData, id: uuid() })
   }
 
   return (
     <>
-      <form className="NewBoxForm" onSubmit={handleSubmit}>
+      <form className="NewBoxForm">
         <label htmlFor="backgroundColor" className="NewBoxForm-Label">
           Color
         </label>
@@ -88,8 +88,11 @@ const NewBoxForm = ({ addBox }) => {
           value={formData.height}
           onChange={handleChange}
         />
-        <button>Add Box</button>
       </form>
+      <div className="NewBoxForm-Button">
+        <button onClick={generate}>Generate</button>
+        <button onClick={handleSubmit}>Add Box</button>
+      </div>
     </>
   )
 }
