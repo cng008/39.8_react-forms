@@ -27,7 +27,8 @@ const Box = ({ id, backgroundColor, width, height, handleRemove }) => {
         onMouseOut={handleMouseOut}
         onClick={remove}
       >
-        {isHovering && <span>x</span>}
+        {/* {isHovering && <span>x</span>} */}
+        <span>x</span>
       </div>
     </>
   )

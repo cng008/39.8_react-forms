@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BoxList /> rendering matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    <h1
+      class="BoxList-h1"
+    >
+      Color Box Generator
+    </h1>
+    <form
+      class="NewBoxForm"
+    >
+      <label
+        class="NewBoxForm-Label"
+        for="backgroundColor"
+      >
+        Color
+      </label>
+      <input
+        class="NewBoxForm-Input"
+        id="backgroundColor"
+        name="backgroundColor"
+        type="color"
+        value=""
+      />
+      <label
+        class="NewBoxForm-Label"
+        for="width"
+      >
+        Width
+      </label>
+      <span />
+      <input
+        class="NewBoxForm-Input"
+        id="width"
+        max="20"
+        min="1"
+        name="width"
+        placeholder="Enter a number"
+        type="range"
+        value=""
+      />
+      <label
+        class="NewBoxForm-Label"
+        for="height"
+      >
+        Height
+      </label>
+      <span />
+      <input
+        class="NewBoxForm-Input"
+        id="height"
+        max="20"
+        min="1"
+        name="height"
+        placeholder="Enter a number"
+        type="range"
+        value=""
+      />
+    </form>
+    <div
+      class="NewBoxForm-Button"
+    >
+      <button>
+        Generate
+      </button>
+      <button>
+        Add Box
+      </button>
+    </div>
+    <div
+      class="BoxList-div"
+    />
+  </div>
+</DocumentFragment>
+`;
