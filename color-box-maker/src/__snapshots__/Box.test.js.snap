@@ -4,10 +4,7 @@ exports[`<Box /> rendering matches snapshot 1`] = `
 <DocumentFragment>
   <div
     class="Box"
-  >
-    <span>
-      x
-    </span>
-  </div>
+    data-testid="Box"
+  />
 </DocumentFragment>
 `;

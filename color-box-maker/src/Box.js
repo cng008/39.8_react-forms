@@ -22,13 +22,14 @@ const Box = ({ id, backgroundColor, width, height, handleRemove }) => {
     <>
       <div
         className="Box"
+        data-testid="Box"
         style={styles}
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
         onClick={remove}
       >
-        {/* {isHovering && <span>x</span>} */}
-        <span>x</span>
+        {isHovering && <span>x</span>}
+        {/* <span>x</span> */}
       </div>
     </>
   )

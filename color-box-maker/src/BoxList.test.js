@@ -32,29 +32,25 @@ describe('<BoxList /> rendering', () => {
     expect(boxList.queryByText('x')).not.toBeInTheDocument()
 
     addBox(boxList)
-    // expect(boxList.firstChild).toHaveClass('Box')
 
     // expect to see a box
-    // fireEvent.mouseOver(boxList)
-    const removeButton = boxList.getByText('x')
-    expect(removeButton).toBeInTheDocument()
-    expect(removeButton.parentElement).toHaveStyle(`
+    const box = boxList.getByTestId('Box')
+    expect(box).toBeInTheDocument()
+    expect(box).toHaveStyle(`
         width: 5em;
         height: 5em;
         background-color: #000000;
       `)
-    // expect form to be empty
-    // expect(boxList.getAllByDisplayValue('')).toHaveLength(3)
   })
 
   it('can remove a box', () => {
     const boxList = render(<BoxList />)
     addBox(boxList)
 
-    const removeButton = boxList.getByText('x')
+    const box = boxList.getByTestId('Box')
 
     // click the remove button and the box should be gone
-    fireEvent.click(removeButton)
-    // expect(removeButton).not.toBeInTheDocument()
+    fireEvent.click(box)
+    expect(box).not.toBeInTheDocument()
   })
 })
