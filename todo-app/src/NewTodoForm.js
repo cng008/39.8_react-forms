@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { v4 as uuid } from 'uuid'
+import './NewTodoForm.css'
 
 /** render a form with one text input for the task to be created
  *
@@ -26,7 +27,7 @@ const NewTodoForm = ({ addTodo }) => {
     <>
       <form className="NewTodoForm">
         <label htmlFor="todo" className="NewTodoForm-Label">
-          Todo
+          Add Task
         </label>
         <input
           className="NewTodoForm-Input"
@@ -37,7 +38,7 @@ const NewTodoForm = ({ addTodo }) => {
           value={formData.todo}
           onChange={handleChange}
         />
-        <button onClick={handleSubmit}>Add Todo</button>
+        <button onClick={handleSubmit}>Add Task</button>
       </form>
     </>
   )

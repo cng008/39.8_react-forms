@@ -15,14 +15,16 @@ const TodoList = () => {
     setTodo(todos => todos.filter(todo => todo.id !== id))
   }
   return (
-    <div>
+    <div className="ToDoList">
       <h1>Todo App</h1>
       <NewTodoForm addTodo={addTodo} />
-      <div className="TodoList-div">
+      <ul>
         {todos.map(({ id, todo }) => (
-          <Todo key={id} id={id} todo={todo} handleRemove={remove} />
+          <li>
+            <Todo key={id} id={id} todo={todo} handleRemove={remove} />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

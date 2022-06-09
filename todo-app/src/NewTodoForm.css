@@ -1,0 +1,14 @@
+.NewTodoForm-Label {
+  font-size: 1.5em;
+  margin: 0 1em;
+}
+
+.NewTodoForm-Input {
+  transform: scale(1.5);
+  margin: 0 3em;
+}
+
+button {
+  transform: scale(1.5);
+  margin: 0 2em;
+}

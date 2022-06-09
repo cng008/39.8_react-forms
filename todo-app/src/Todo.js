@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Todo.css'
 
 /** display a div with the task of the todo
  *
