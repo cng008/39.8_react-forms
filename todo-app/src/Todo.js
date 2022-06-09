@@ -8,13 +8,27 @@ import './Todo.css'
  */
 
 const Todo = ({ id, todo, handleRemove }) => {
+  const [isHovering, setIsHovering] = useState(false)
+  const handleMouseOver = () => setIsHovering(true)
+  const handleMouseOut = () => setIsHovering(false)
   const remove = () => handleRemove(id)
 
   return (
     <>
-      <div className="Todo">
+      <div
+        className="Todo"
+        data-testid="Todo"
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+      >
         <p>{todo}</p>
-        <button onClick={remove}>x</button>
+        <div
+          className="productbox"
+          onMouseEnter={handleMouseOver}
+          onMouseLeave={handleMouseOut}
+        >
+          {isHovering && <button onClick={remove}>x</button>}
+        </div>
       </div>
     </>
   )
