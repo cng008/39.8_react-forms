@@ -39,14 +39,23 @@ const Todo = ({ id, task, handleRemove, update }) => {
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
+        <input type="checkbox"></input>
         <p>{task}</p>
         <div
-          className="productbox"
+          className="Todo-Buttons"
           onMouseEnter={handleMouseOver}
           onMouseLeave={handleMouseOut}
         >
-          {isHovering && <button onClick={toggleEdit}>Edit</button>}
-          {isHovering && <button onClick={remove}>Remove</button>}
+          {isHovering && (
+            <button onClick={toggleEdit}>
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+          )}
+          {isHovering && (
+            <button onClick={remove}>
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          )}
         </div>
       </div>
     </>

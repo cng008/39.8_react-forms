@@ -5,10 +5,14 @@
 
 .NewTodoForm-Input {
   transform: scale(1.5);
-  margin: 0 3em;
+  margin: 0 2em;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
 }
 
 button {
   transform: scale(1.5);
   margin: 0 2em;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
 }

@@ -34,15 +34,13 @@ const TodoList = () => {
       <NewTodoForm addTodo={create} />
       <ul>
         {todos.map(todo => (
-          <li>
-            <Todo
-              key={todo.id}
-              id={todo.id}
-              task={todo.task}
-              handleRemove={remove}
-              update={update}
-            />
-          </li>
+          <Todo
+            key={todo.id}
+            id={todo.id}
+            task={todo.task}
+            handleRemove={remove}
+            update={update}
+          />
         ))}
       </ul>
     </div>
