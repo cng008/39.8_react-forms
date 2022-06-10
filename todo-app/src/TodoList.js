@@ -11,7 +11,7 @@ const TodoList = () => {
 
   // add a new todo
 
-  const create = newTodo => {
+  const addTodo = newTodo => {
     setTodos(todos => [...todos, newTodo])
   }
 
@@ -31,7 +31,7 @@ const TodoList = () => {
   return (
     <div className="ToDoList">
       <h1>Todo App</h1>
-      <NewTodoForm addTodo={create} />
+      <NewTodoForm addTodo={addTodo} />
       <ul>
         {todos.map(todo => (
           <Todo

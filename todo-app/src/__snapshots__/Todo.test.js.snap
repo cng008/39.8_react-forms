@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Todo /> rendering matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Todo"
+    data-testid="Todo"
+  >
+    <input
+      type="checkbox"
+    />
+    <p />
+    <div
+      class="Todo-Buttons"
+      data-testid="Edit"
+    />
+    <div
+      class="Todo-Buttons"
+      data-testid="Remove"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Todo /> rendering matches snapshot when editing 1`] = `
+<DocumentFragment>
+  <div
+    class="Todo"
+    data-testid="Todo"
+  >
+    <input
+      type="checkbox"
+    />
+    <p />
+    <div
+      class="Todo-Buttons"
+      data-testid="Edit"
+    />
+    <div
+      class="Todo-Buttons"
+      data-testid="Remove"
+    />
+  </div>
+</DocumentFragment>
+`;

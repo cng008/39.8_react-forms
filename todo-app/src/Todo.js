@@ -45,12 +45,20 @@ const Todo = ({ id, task, handleRemove, update }) => {
           className="Todo-Buttons"
           onMouseEnter={handleMouseOver}
           onMouseLeave={handleMouseOut}
+          data-testid="Edit"
         >
           {isHovering && (
             <button onClick={toggleEdit}>
               <i class="fa-solid fa-pen-to-square"></i>
             </button>
           )}
+        </div>
+        <div
+          className="Todo-Buttons"
+          onMouseEnter={handleMouseOver}
+          onMouseLeave={handleMouseOut}
+          data-testid="Remove"
+        >
           {isHovering && (
             <button onClick={remove}>
               <i class="fa-solid fa-trash-can"></i>
