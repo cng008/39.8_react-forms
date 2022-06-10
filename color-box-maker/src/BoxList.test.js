@@ -1,7 +1,6 @@
 import React from 'react'
 import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
-
 import BoxList from './BoxList'
 
 function addBox(boxList, height = '5', width = '5', color = '000000') {
