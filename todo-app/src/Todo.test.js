@@ -19,4 +19,22 @@ describe('<Todo /> rendering', () => {
     fireEvent.click(editButton)
     expect(asFragment()).toMatchSnapshot()
   })
+
+  it('runs the update function on form submit', function() {
+    const updateMock = jest.fn()
+    const { getByTestId, getByText } = render(<Todo update={updateMock} />)
+    const editButton = getByTestId('Edit')
+    fireEvent.click(editButton)
+    const updateButton = getByText('Save')
+    fireEvent.click(updateButton)
+    expect(updateMock).toHaveBeenCalled()
+  })
+
+  it('runs the delete function on button click', function() {
+    const removeMock = jest.fn()
+    const { getByTestId } = render(<Todo remove={removeMock} />)
+    const deleteButton = getByTestId('Remove')
+    fireEvent.click(deleteButton)
+    expect(removeMock).toHaveBeenCalled()
+  })
 })

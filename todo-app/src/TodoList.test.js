@@ -30,4 +30,30 @@ describe('<TodoList /> rendering', () => {
     expect(list.getByTestId('Edit')).toBeInTheDocument()
     expect(list.getByTestId('Remove')).toBeInTheDocument()
   })
+
+  it('can edit a todo', function () {
+    const list = render(<TodoList />)
+    addTodo(list)
+
+    fireEvent.mouseOver(list.getByTestId('Todo'))
+    fireEvent.click(list.getByTestId('Edit'))
+    const editInput = list.getByText('write tests')
+    fireEvent.change(editInput, { target: { value: 'sleep' } })
+    fireEvent.click(list.getByTestId('Save'))
+
+    // expect only edited todo to appear
+    expect(list.getByText('sleep')).toBeInTheDocument()
+    expect(list.queryByText('write tests')).not.toBeInTheDocument()
+  })
+
+  it('can delete a todo', function () {
+    const list = render(<TodoList />)
+    addTodo(list)
+
+    fireEvent.mouseOver(list.getByTestId('Todo'))
+    fireEvent.click(list.getByTestId('Remove'))
+
+    // expect todo to be gone
+    expect(list.queryByText('write tests')).not.toBeInTheDocument()
+  })
 })
